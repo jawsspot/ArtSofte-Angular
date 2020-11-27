@@ -1,0 +1,20 @@
+.card {
+    
+    padding:  .5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    h2 {
+        margin-bottom: .5rem;
+    }
+    
+    button {
+        margin-bottom: .5rem;
+    }
+}
+        .list_empty{
+            text-align: center;
+        }

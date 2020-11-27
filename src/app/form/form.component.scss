@@ -1,0 +1,15 @@
+$alert:  #ff0000;
+
+.invalid {
+  border: 1px solid $alert;
+}
+
+.addTransist {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+    .alert-danger {
+      font-size: 10px;
+      color: $alert;
+    }
+}

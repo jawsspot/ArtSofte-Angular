@@ -1,0 +1,18 @@
+<ul 
+*ngIf="cardService.listTransist.length; else noCard"  
+class="card_list">
+  <li class="card" *ngFor="let el of cardService.listTransist; let i=index">
+    <strong>{{i+1}}</strong>
+    <p>{{el.senderNumber}}</p>
+    <small>{{el.date | date}}</small>
+    <p>{{el.recipientNumber}}</p>
+    <p>{{el.transferAmount}}</p>
+    
+    <button (click)="removeCard(el.id)" >Удалить</button>
+    <button><a  (click)="repeatTransist(el)" routerLink="/">Повторить перевод</a></button>
+  </li>
+</ul>
+
+<ng-template #noCard>
+  <p class="list_empty">Нет записей</p>
+</ng-template>

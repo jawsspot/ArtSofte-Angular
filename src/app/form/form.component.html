@@ -1,0 +1,69 @@
+<form (ngSubmit)="submit()" class="addTransist" [formGroup]="form">
+    <fieldset>
+        <div>
+            <input
+            formControlName="senderNumber"
+            type="text"
+            placeholder="Номер карты отправителя"
+            >
+            <div class="alert alert-danger"
+            *ngIf="form.controls['senderNumber'].invalid && form.controls['senderNumber'].touched">
+            Введите номер карты от 13 до 19 цифр
+            </div>
+        </div>
+
+        <div>
+            <input
+            formControlName="validityCard"
+            type="text"
+            placeholder="Месяц/год"
+            name="validityCard"
+            >
+            <div class="alert alert-danger"
+            *ngIf="form.controls['validityCard'].invalid && form.controls['validityCard'].touched">
+            Введите срок действия карты.
+            </div>
+        </div>
+        <div>
+            <input
+            formControlName="cvc"
+            type="text"
+            placeholder="cvc/cvv2"
+            name="cvc/cvv2"
+            >
+            <div class="alert alert-danger"
+            *ngIf="form.controls['cvc'].invalid && form.controls['cvc'].touched">
+            Введите cvc/cvv2 3-4 знака
+            </div>
+        </div>
+     </fieldset>
+     <fieldset>
+         <div>
+            <input
+            formControlName="recipientNumber"
+            type="text"
+            placeholder="Номер карты получателя"
+            
+            name="recipientNumber"
+            >
+            <div class="alert alert-danger"
+            *ngIf="form.controls['recipientNumber'].invalid && form.controls['recipientNumber'].touched">
+            Введите номер карты от 13 до 19 цифр
+            </div>
+        </div>
+        <div>
+            <input
+            formControlName="transferAmount"
+            type="text"
+            placeholder="Сумма перевода"
+            
+            name="transferAmount"
+            >
+            <div class="alert alert-danger"
+            *ngIf="form.controls['transferAmount'].invalid && form.controls['transferAmount'].touched">
+            Введите сумму перевода
+            </div>
+        </div>
+     </fieldset>
+    <button [disabled]="form.invalid" type="submit" >Add transist</button>
+</form>
